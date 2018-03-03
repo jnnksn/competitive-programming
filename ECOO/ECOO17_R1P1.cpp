@@ -1,3 +1,5 @@
+// https://dmoj.ca/problem/ecoo17r1p1
+
 #include <iostream>
 #include <math.h>
 using namespace std;
