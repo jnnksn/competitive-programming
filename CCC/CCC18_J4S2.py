@@ -1,3 +1,5 @@
+# https://dmoj.ca/problem/ccc18s2
+
 numSun = int(input())
 firstLast = []
 for i in range(numSun):
