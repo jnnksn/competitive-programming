@@ -1,8 +1,5 @@
-# I hate my life. If you're reading this code, I apologize
-# in advance if your eyes bleed out. 
-# I will not be held accountable for any damage caused
-# by reading the code below. You have been warned. 
-#=========================
+#https://dmoj.ca/problem/ecoo17r1p2
+#WARNING: Very inefficient!
 for _ in range(10):
   readLine = ""
   names = []
