@@ -1,3 +1,5 @@
+# https://dmoj.ca/problem/ecoo17r2p1
+
 rules = []
 floors = []
 collectionString = ""
