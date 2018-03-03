@@ -1,3 +1,5 @@
+# http://train.usaco.org/usacoprob2?a=pRHTM0r4bV3&S=ride
+
 #include <cstdio>
 #include <iostream>
 #include <string>
