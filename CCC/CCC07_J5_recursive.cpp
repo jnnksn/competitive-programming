@@ -5,7 +5,7 @@
 using namespace std;
 
 int minimum, maximum, N, tmp, num_ways = 0;
-vector<int> motels;
+vector<int> motels = {0, 990, 1010, 1970, 2030, 2940, 3060, 3930, 4060, 4970, 5030, 5990, 6010, 7000};
 
 int find_motels(int distances) {
     if (distances == 7000) return num_ways += 1;
@@ -21,21 +21,6 @@ int find_motels(int distances) {
 }
 
 int main() {
-    motels.push_back(0);
-    motels.push_back(990);
-    motels.push_back(1010);
-    motels.push_back(1970);
-    motels.push_back(2030);
-    motels.push_back(2940);
-    motels.push_back(3060);
-    motels.push_back(3930);
-    motels.push_back(4060);
-    motels.push_back(4970);
-    motels.push_back(5030);
-    motels.push_back(5990);
-    motels.push_back(6010);
-    motels.push_back(7000);
-    
     cin >> minimum >> maximum >> N;
     
     for (int i = 0; i < N; i++) {
