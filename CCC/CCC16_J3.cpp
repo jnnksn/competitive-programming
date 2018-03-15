@@ -6,7 +6,6 @@
 #include <vector>
 using namespace std;
 string word;
-string c;
 int C = 0;
 vector<string> track;
 void find_pal(string N) {
