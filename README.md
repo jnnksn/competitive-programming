@@ -4,7 +4,7 @@
 
 *Macros...Includes...etc (in progress):* <br />
 - #include <bits/stdc++.h>
-- #define loop(x,y,z) for(int x = y; x < z; ++x)
+- #define REP(x,y,z) for(int x = y; x < z; ++x)
 - #define all(x) x.begin(), x.end()
 - #define INF (int)1e9
 
