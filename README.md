@@ -3,8 +3,9 @@
 **_Undated Solutions Were Created Before 3/18/2018_** :date:
 
 *Macros...Includes...etc (in progress):* <br />
-- #include <bits/stdc++.h>
-- #define REP(x,y,z) for(int x = y; x < z; ++x)
-- #define all(x) x.begin(), x.end()
-- #define INF (int)1e9
-
+```
+#include <bits/stdc++.h>
+#define REP(x,y,z) for(int x = y; x < z; ++x)
+#define all(x) x.begin(), x.end()
+#define INF (int)1e9
+```
