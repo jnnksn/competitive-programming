@@ -3,7 +3,7 @@
 **_Undated Solutions Were Created Before 3/18/2018_** :date:
 
 *Competitive Programming Template (updated 03/20/2018):* <br />
-```
+```c++
 #include <bits/stdc++.h>
 #define REP(x,y,z) for(int x = y; x < z; ++x)
 #define ALL(x) x.begin(), x.end()
