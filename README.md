@@ -6,6 +6,20 @@
 ```
 #include <bits/stdc++.h>
 #define REP(x,y,z) for(int x = y; x < z; ++x)
-#define all(x) x.begin(), x.end()
+#define ALL(x) x.begin(), x.end()
 #define INF (int)1e9
+#define EACH(x, y) for (auto x : y)
+#define IN(x,y) find(ALL(x), y)
+using namespace std;
+
+int main() {
+  //freopen("input.txt", "r", stdin);
+  //freopen("output.txt", "w", stdout);
+  /*
+  int TC = 10;
+  while (TC--) {
+  
+  }
+  */
+}
 ```
