@@ -2,7 +2,7 @@
 **I suck at coding..........FOR NOW.** :stuck_out_tongue_closed_eyes: <br />
 **_Undated Solutions Were Created Before 3/18/2018_** :date:
 
-*Competitive Programming Template (updated 03/20/2018):* <br />
+*C++ Competitive Programming Template (updated 03/20/2018):* <br />
 ```c++
 #include <bits/stdc++.h>
 #define REP(x,y,z) for(int x = y; x < z; ++x)
@@ -23,4 +23,13 @@ int main() {
   }
   */
 }
+```
+*Python Competitive Programming Template (updated 04/1/2018):* <br />
+```python
+
+
+
+
+
+
 ```
