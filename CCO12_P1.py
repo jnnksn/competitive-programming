@@ -1,5 +1,6 @@
 # https://dmoj.ca/problem/cco12p1
 # 04/05/2018
+# 3/5 marks
 # ===============================
 # TLE with python... I probably
 # should have used C++ :(
