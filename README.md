@@ -4,7 +4,11 @@
 
 *C++ Competitive Programming Template (updated 03/20/2018):* <br />
 ```c++
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+
 #define REP(x,y,z) for(int x = y; x < z; ++x)
 #define ALL(x) x.begin(), x.end()
 #define INF (int)1e9
