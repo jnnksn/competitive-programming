@@ -1,6 +1,12 @@
 # https://dmoj.ca/problem/ccc01s5
 # 04/17/2018
-# 30/40 on DMOJ ~ Time Limit Exceeded
+#--------------------------------
+# Careful for TLE. 
+# K cannot be >= M-1
+# since if K is M-1, there is no
+# point in calling the function
+# again since K != M
+#--------------------------------
 
 limit = int(input())
 N = int(input())
@@ -24,7 +30,7 @@ def find(x, y, k, index):
         retVal = k
         retIn = index.split()
         return True
-    elif k >= limit:
+    elif k >= limit-1:
         return False
     elif not y.startswith(x) and not x.startswith(y):
         return False
@@ -44,5 +50,6 @@ else:
     print(retVal)
     for j in retIn:
         print(j)   
+  
 
 
