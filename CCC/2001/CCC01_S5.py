@@ -20,14 +20,13 @@ retIn = []
 def find(x, y, k, index):
     global retVal
     global retIn
-    
     if x == y:
         retVal = k
         retIn = index.split()
         return True
     elif k >= limit:
         return False
-    elif x not in y and y not in x:
+    elif not y.startswith(x) and not x.startswith(y):
         return False
     else:
         for i in num_index:
@@ -38,9 +37,12 @@ def find(x, y, k, index):
 for i in num_index:
     find(a[i], b[i], 1, str(i+1))
 
-if retVal > 0 and len(retIn) != 0:
+
+if retVal == 0 and len(retIn) == 0:
+    print("No solution.")
+else:
     print(retVal)
     for j in retIn:
-        print(j)       
-else:
-    print("No solution.")
+        print(j)   
+
+
