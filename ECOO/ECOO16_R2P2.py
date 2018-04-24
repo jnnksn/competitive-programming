@@ -1,15 +1,27 @@
 # https://dmoj.ca/problem/ecoo16r2p2
 # 04/20/2018
 # ----------------------------------
-# Not Finished! Have to go get a 
-# hair cut. Hopefully I remember 
-# to come back!
+# Finished Encoding & Decoding.
+# Now must finish how to
+# convert base 10 to 26
 # ----------------------------------
 
+#encode
 letters = "abcdefghijklmnopqrstuvwxyz"
 
-key = 5
-word = "agddecdhputthelimeinthecoconut"
+
+key = int(input()) #5
+word = input().split()
+num_words = len(word)
+hold = ''
+
+d = num_words // 26
+if d != 0:
+    hold += str(d)
+    for i in range(d):
+        
+    
+#word = "agddecdhputthelimeinthecoconut"
 tmp = ""
 for j in range(1,len(word)):
     total = 0
@@ -21,3 +33,21 @@ for j in range(1,len(word)):
 
 tmp += letters[(key + letters.index(word[-1]))% 26]
 print(tmp)
+'''
+#decode
+
+key = 13
+word = 'ccxupnkiivspyqdtlsshwc'
+tmp = ''
+
+for i in range(len(word)-1, -1, -1):
+    total = 0
+    for j in range(0, len(tmp)):
+        total += letters.index(tmp[j])
+    num_rotate = ((total+key)%26)
+    
+    current = ((letters.index(word[i])-num_rotate)%26)
+    tmp += letters[current]
+
+print(tmp[::-1])
+'''
