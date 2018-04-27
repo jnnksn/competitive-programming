@@ -8,7 +8,10 @@
 # then move N - 1 disks to third pin.
 # Thus 2 * (N-1) + 1
 # ----------------------------------
-
+'''
 for _ in range(10):
     poopOnMe = int(input().split()[0])
     print((2 * (poopOnMe-1)) + 1)
+'''
+# In one line
+for _ in range(10): i = int(input().split()[0]); print((2 * (i-1)) + 1)
