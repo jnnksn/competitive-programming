@@ -28,22 +28,7 @@ int main() {
   */
 }
 ```
-*Python Competitive Programming Template (updated 04/1/2018):* <br />
-```python
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
+*TODO (updated 05/05/2018):* <br />
+* https://dmoj.ca/problem/ccc01s3
+* https://dmoj.ca/problem/ccc03s3
+* https://dmoj.ca/problem/ccc05s4
