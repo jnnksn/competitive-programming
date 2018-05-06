@@ -1,88 +1,63 @@
 // https://dmoj.ca/problem/ccc18j5
+// 05/06/2018
+// -------------------------------
+// Learned that you can declare vectors
+// with predefined size!
+// One thing to remember is that when
+// checking for smallest distance,
+// remember that the page you are checking
+// is an ending page AND can be visited.
+// -------------------------------
 
 #include <iostream>
-#include <vector>
 #include <queue>
+#include <vector>
 using namespace std;
-
-// var declaration
-vector<int> adj[10001];
-int dist[10001], N, numPage, pageReach;
+int N_page, dist[10001], M, tmp, SMALL = 100001;
 bool visited[10001] = {false};
-vector<int> hasZero;
-
-
-bool visitAll() {
-  for (int i = 1; i < N+1; i++) {
-    if (visited[i] == false) return false;
-  }
-  return true;
-}
-
+vector<int> adj[10001];
+queue<int> q;
 
 int main() {
-  cin >> N;
-  
-  for (int i = 1; i < N + 1; i++) {
-    cin >> numPage;
-    if (numPage == 0) {
-      // push back page number with 0
-      hasZero.push_back(i);
-    }
-    for (int j = 0; j < numPage; j++) {
-      cin >> pageReach;
-      adj[i].push_back(pageReach);
+    // INPUT
+    cin >> N_page;
+    for (int i = 1; i < N_page+1; ++i) {
+        cin >> M;
+        for (int j = 0; j < M; ++j) {
+            cin >> tmp;
+            adj[i].push_back(tmp);
+        }
     }
     
-  }
-  
- // get_input();
-  
-  queue<int> q;
-  q.push(1);
-  visited[1] = true;
-  dist[1] = 0;
-  // SAME SOMETHING WRONG WITH DIST INPUT OR SOMETHING
-  
-  /*
-  while (!q.empty()) {
-    int s = q.front(); q.pop();
-    // process node s
-    for (auto u : adj[s]) {
-      if (visited[u]) continue;
-      visited[u] = true;
-      dist[u] = dist[s] + 1;
-      q.push(u);
+    // BFS SETUP
+    visited[1] = true;
+    dist[1] = 0;
+    q.push(1);
+    
+    // BFS
+    while (!q.empty()) {
+        int s = q.front(); q.pop();
+        // process node s
+        if (dist[s] < SMALL && adj[s].empty() && visited[s]) SMALL = dist[s];
+        for (auto u : adj[s]) {
+            if (visited[u]) continue;
+            
+            visited[u] = true;
+            dist[u] = dist[s] + 1;
+            q.push(u);
+        }
     }
-  }
-  */
-  
-  while (!q.empty()) {
-    int s = q.front(); q.pop();
-    // process node s
-    for (int u : adj[s]) {
-        if (visited[u]) continue;
-        visited[u] = true;
-        dist[u] = dist[s] + 1;
-        q.push(u);
+    
+    // Final Statements
+    bool reachable = true;
+    for (int i = 1; i < N_page+1; ++i) {
+        if (!visited[i]) {
+            reachable = false;
+            cout << "N\n";
+            break;
+        }
     }
-  }
-  
-  if (visitAll()) {
-    cout << "Y" << "\n";
-  } else {
-    cout << "N" << "\n";
-  }
-  
-  
-  int smallest = N;
-  for (auto u : hasZero) {
-    if (dist[u] < smallest && visited[u]) {
-      smallest = dist[u];
-    }
-  }
-  
-  cout << smallest+1;
-  
-  return 0;
+    if (reachable) cout << "Y\n";
+    cout << SMALL + 1 << "\n";
 }
+
