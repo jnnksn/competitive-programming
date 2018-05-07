@@ -36,4 +36,4 @@ for i in range(1, N_page+1):
         break
 
 if reachable: print("Y")
-print(SMALL+1)
+print(SMALL)
