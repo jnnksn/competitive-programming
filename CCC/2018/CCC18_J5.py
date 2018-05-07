@@ -14,6 +14,7 @@ for _ in range(N_page):
 # BFS SETUP
 visited[1] = True;
 queue.append(1)
+dist[1] = 1
 
 # BFS
 while (len(queue) > 0):
