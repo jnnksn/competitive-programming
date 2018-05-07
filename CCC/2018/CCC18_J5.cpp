@@ -31,7 +31,7 @@ int main() {
     
     // BFS SETUP
     visited[1] = true;
-    dist[1] = 0;
+    dist[1] = 1;
     q.push(1);
     
     // BFS
@@ -58,6 +58,6 @@ int main() {
         }
     }
     if (reachable) cout << "Y\n";
-    cout << SMALL + 1 << "\n";
+    cout << SMALL << "\n";
 }
 
