@@ -29,6 +29,6 @@ int main() {
 }
 ```
 *TODO (updated 05/05/2018):* <br />
-* https://dmoj.ca/problem/ccc01s3
-* https://dmoj.ca/problem/ccc03s3
-* https://dmoj.ca/problem/ccc05s4
+* https://dmoj.ca/problem/coci06c1p4
+* https://dmoj.ca/problem/ccc16s4
+* https://dmoj.ca/problem/ccc02s4
