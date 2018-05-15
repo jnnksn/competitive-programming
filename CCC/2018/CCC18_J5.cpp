@@ -14,7 +14,7 @@
 #include <vector>
 using namespace std;
 int N_page, dist[10001], M, tmp, SMALL = 100001;
-bool visited[10001] = {false};
+bool visited[10001]; // default is false
 vector<int> adj[10001];
 queue<int> q;
 
