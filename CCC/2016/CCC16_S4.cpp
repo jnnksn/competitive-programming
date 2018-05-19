@@ -85,6 +85,8 @@ int main() {
     REP(i, 0, num_balls) REP(j, 0, num_balls) DP[i][j] = -1;
     
     // SEARCH
+    // think of i as the range of search. Start at 2 riceballs, then continue to check 3,4,5...
+    // find combinations of 2 and 3 in these ranges..
     REP(i, 2, num_balls+1) {
         int maxStart = num_balls-i+1;
         REP(fs, 0, maxStart) {
