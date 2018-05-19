@@ -57,6 +57,7 @@ bool find_two(int fs, int le) {
 }
 
 // FS <= first block section => FE | MS <= middle block section => ME | LS <= end block section => LE
+// If total of all blocks in first section == total of all blocks in last section. We can combine.
 void find_three(int fs, int le) {
     REP(ms, fs+1, le) {
         // end of first block section
