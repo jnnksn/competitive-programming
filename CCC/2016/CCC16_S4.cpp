@@ -20,10 +20,6 @@ using namespace std;
 int num_balls, riceBalls[400], DP[400][400];
 
 // HELPER FUNCTIONS
-void add_sol(int s, int e, int c) {
-    DP[s][e] = c;
-}
-
 bool possible(int s, int e) {
     if (s == e) return true;
     return DP[s][e] != -1;
@@ -49,7 +45,7 @@ bool find_two(int fs, int le) {
         if (f != l) continue;        
         // find total after combining
         int total = l * 2;
-        add_sol (fs, le, total);
+        DP[fs][le] = total;
         // only need 1 sol
         return true;
     }
@@ -74,7 +70,7 @@ void find_three(int fs, int le) {
             if (f != l) continue;
             int m = find(ms, me);
             int total = f + m + l;
-            add_sol(fs, le, total);
+            DP[fs][le] = total;
             return;
         }
     }
