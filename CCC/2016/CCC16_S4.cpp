@@ -3,7 +3,7 @@
 // -------------------------------
 // I swear I didn't copy:
 // https://amorim.ca/display/CS/Combining+Rice+Balls
-// @AndrewAndyDong -> Thanks for giving me the resource :D
+// @AndrewDongAndy -> Thanks for giving me the resource :D
 // -------------------------------
 #include <iostream>
 #include <algorithm>
