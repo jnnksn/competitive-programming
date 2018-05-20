@@ -12,6 +12,11 @@
 // I planned to use a vector to memoize the recursion, checking whether
 // a combination has been made before. I soon discovered that there was no
 // point since it is guaranteed that each generated combination will be unique.
+//
+// An iterative solution could be easily done, instead of a recursive apporach.
+// Since each unknown game has 3 different outcomes, we should be able to
+// count the number of unknown games, then iteratively generate the outcomes.
+// BUT IDK BECAUSE I DIDN'T DO THAT.
 // -------------------------------
 #include <iostream>
 #include <algorithm>
