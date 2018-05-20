@@ -31,6 +31,3 @@ int main() {
 *TODO (updated 05/05/2018):* <br />
 * https://dmoj.ca/problem/ccc07s5
 * https://dmoj.ca/problem/ccc02s4
-
-*RECORDS (updated 05/11/2018:* <br />
-* https://dmoj.ca/problem/ccc18s3 --> 35 Submissions!
