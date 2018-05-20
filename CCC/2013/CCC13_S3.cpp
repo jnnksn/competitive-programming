@@ -99,6 +99,9 @@ bool simulate(string res) {
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
     cin >> FAV >> G;
+    
+    // X < Y ALWAYS. Thus we can check only for 1v2, and not an additional 2v1!
+    // that took me a while to realize :/
     REP(_, 0, G) {
         cin >> X >> Y >> sX >> sY;
         // OUTCOME
