@@ -17,15 +17,9 @@
 using namespace std;
 
 int main() {
-  ios::sync_with_stdio(false); cin.tie(0);
-  //freopen("input.txt", "r", stdin);
-  //freopen("output.txt", "w", stdout);
-  /*
-  int TC = 10;
-  while (TC--) {
-  
-  }
-  */
+    ios::sync_with_stdio(false); cin.tie(0);
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
 }
 ```
 *TODO (updated 05/05/2018):* <br />
