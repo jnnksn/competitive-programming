@@ -11,7 +11,7 @@
 
 #define REP(x,y,z) for(int x = y; x < z; ++x)
 #define ALL(x) x.begin(), x.end()
-#define INF 2000000000
+#define INF 3e9+5
 #define EACH(x, y) for (auto x : y)
 #define IN(x,y) find(ALL(x), y)
 using namespace std;
