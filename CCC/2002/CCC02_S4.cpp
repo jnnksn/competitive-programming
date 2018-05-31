@@ -41,7 +41,6 @@ int main() {
     DP[0] = 0;
     FOR(i, 1, N+1) {
         FOR(j, 0, max_size) {
-            if (i+j > N) continue;
             int BIG = -1;
             FOR(x, i, i+j+1) BIG = max(BIG, times[x]);
             if (DP[i-1] + BIG < DP[i+j]) {
