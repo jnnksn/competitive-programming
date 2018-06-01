@@ -90,6 +90,7 @@ int main() {
         
         // if d <= last dist at b, then amount of treats stays the same at prevs[b]. 
         
+        // Cannot revisit (0,0), thus DP[0] can only move from a to b.
         if (a == 0) DP[0] = max(DP[0], prevs[b]+1);
         else {
             // Can move from point a to b, or b to a.
@@ -103,7 +104,7 @@ int main() {
         }
         
     }
-    
+    // All num treats must be linked to start (0,0)
     cout << DP[0] << "\n";
     
 }
