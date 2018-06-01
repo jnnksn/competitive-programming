@@ -44,14 +44,14 @@ bool compare(const Triple &a, const Triple &b) {
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
     
-    
+  
     cin >> N;
     FOR(_, 0, N) {
         cin >> x >> y;
         points.push_back({x,y});
     }
     
-    // find dists
+    // find the distances of all point combinations
     FOR(i, 0, N+1) {
         FOR(j, i+1, N+1) {
             int dX = points[i].first - points[j].first;
@@ -61,25 +61,43 @@ int main() {
         }
     }
     
+    // sort all possible distances from least to greatest
     sort(ALL(dists), compare);
    
-    
+    // process the distances from least to greatest
     FOR(i, 0, dists.size()) {
-        
+     
         d = dists[i].one; a = dists[i].two; b = dists[i].thr;
         
+        // the only way to move to another point is if last dist was larger than the dist you must travel now.
+        // also you cannot go back to the same point after two consecutive moves
         if (d > currDist[a]) {
+            // if you can move to this point, set new dist for future comparison
+            // set previous best number of treats to current best.
             currDist[a] = d;
             prevs[a] = DP[a];
         }
         
+        // prevs holds previous highest amount of treats at that point
         if (d > currDist[b]) {
             currDist[b] = d;
             prevs[b] = DP[b];
         }
         
+        // if d > last dist at points a and b, then both can be visited.
+        // So, from DP[a]+1 to DP[b]
+        // or DP[b]+1 to DP[a]
+        
+        // if d <= last dist at b, then amount of treats stays the same at prevs[b]. 
+        
         if (a == 0) DP[0] = max(DP[0], prevs[b]+1);
         else {
+            // Can move from point a to b, or b to a.
+            // That is:
+            // max(DP[a], DP[b]+1) 
+            // max(DP[b], DP[a]+1)
+            // prev num treats tend to be lower, thus curr num treats won't change.
+            // Will accept a to b if num treats at b+1 > num treats at a
             DP[a] = max(DP[a], prevs[b]+1);
             DP[b] = max(DP[b], prevs[a]+1);
         }
