@@ -16,7 +16,7 @@
 #define EACH(x, y) for (auto x : y)
 #define IN(x,y) find(ALL(x), y)
 
-struct Triple {int one, two, thr;};
+struct triple {int first, second, third;};
 
 using namespace std;
 # ------------------------------------------
