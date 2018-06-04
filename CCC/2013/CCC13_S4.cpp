@@ -2,7 +2,7 @@
 // 06/03/2018
 // -------------------------------
 // BFS that traverses by lesser height. 
-// The only purpose of visited is to check whether the "greater" height is bigger than
+// We check visited whether the "greater" height is bigger than
 // the "smaller" height, or vice versa. 
 // If we can reach the "smaller" height starting from the "greater" height then 'yes'
 // Otherwise, start again, but from the "smaller" height.
@@ -37,6 +37,7 @@ int main() {
     while (!q.empty()) {
         int s = q.front(); q.pop();
         for (auto u : adj[s]) {
+            if (visited[u]) continue;
             q.push(u);
             visited[u] = true;
         }
