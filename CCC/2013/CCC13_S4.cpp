@@ -1,7 +1,7 @@
 // https://dmoj.ca/problem/ccc13s4
 // 06/03/2018
 // -------------------------------
-// BFS that traverses by greater height. 
+// BFS that traverses by lesser height. 
 // The only purpose of visited is to check whether the "greater" height is bigger than
 // the "smaller" height, or vice versa. 
 // If we can reach the "smaller" height starting from the "greater" height then 'yes'
