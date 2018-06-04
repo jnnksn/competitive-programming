@@ -2,6 +2,7 @@
 // 06/03/2018
 // -------------------------------
 // BFS that traverses by lesser height. 
+// We don't set our starting nodes to true in the visited array.
 // We check visited whether the "greater" height is bigger than
 // the "smaller" height, or vice versa. 
 // If we can reach the "smaller" height starting from the "greater" height then 'yes'
