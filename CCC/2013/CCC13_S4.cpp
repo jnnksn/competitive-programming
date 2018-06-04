@@ -9,6 +9,7 @@
 // if we can reach the "greater" height starting from the "smaller" height then 'no'
 // otherwise both can't reach eachother therefore it is unknown.
 //
+// Using ios::sync_with_stdio(0); cin.tie(0); lowers time by almost 2 seconds!
 // WOW graph theory is much easier than DP...
 // -------------------------------
 
@@ -23,6 +24,7 @@ vector<int> adj[1000001], ans[1000001];
 bool visited[1000001] = {false};
 queue<int> q;
 int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
     cin >> N >> P;
     for(int i = 0; i < P; ++i) {
         cin >> X >> Y;
