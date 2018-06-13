@@ -10,8 +10,7 @@ http://www.cplusplus.com/reference/ <br />
 *TODO (updated 05/20/2018):* <br />
 * https://dmoj.ca/problem/ioi09p4
 * ~~https://dmoj.ca/problem/ccc02s4~~
-* https://dmoj.ca/problem/ecoo17r2p2
-* https://dmoj.ca/problem/ccc15j5
 * ~~https://dmoj.ca/problem/valday15p2~~
 * ~~https://dmoj.ca/problem/ccc13s4~~
 * ~~https://dmoj.ca/problem/ccc08s3~~
+* https://dmoj.ca/problem/ccc07s3
