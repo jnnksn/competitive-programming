@@ -13,6 +13,6 @@ http://www.cplusplus.com/reference/ <br />
 * ~~https://dmoj.ca/problem/valday15p2~~
 * ~~https://dmoj.ca/problem/ccc13s4~~
 * ~~https://dmoj.ca/problem/ccc08s3~~
-* https://dmoj.ca/problem/ccc07s3
+* ~~https://dmoj.ca/problem/ccc07s3~~
 * https://dmoj.ca/problem/gfssoc1j5
 * https://dmoj.ca/problem/ccc11s5
