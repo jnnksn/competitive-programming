@@ -1,6 +1,9 @@
 // https://dmoj.ca/problem/ddrp4
 // 06/26/2018
-
+// -----------------------------
+// I got carried. At least I understand :/
+// BTW what's with this indentation? WHAT THE HECK
+// -----------------------------
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -22,7 +25,7 @@ void adjacent() {
 				swap(l1, l2);
 				swap(s1, s2);
 			}
-
+			
 			if (l1 - l2 <= 1) {
 				for (int z = 0; z < l2; ++z) {
 					if (s1[z] != s2[z]) {
@@ -31,6 +34,7 @@ void adjacent() {
 						} else {
 							valid = (s1.substr(z+1) == s2.substr(z));
 						}
+						break;
 					}
 				}
 
@@ -40,9 +44,8 @@ void adjacent() {
 
 
 			if (valid) {
-				adj[i][j] = 1;
-			}
-
+				adj[i][j] = adj[j][i] = 1;
+			} 
 		}
 	}
 }
