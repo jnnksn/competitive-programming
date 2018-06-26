@@ -1,5 +1,5 @@
-// https://dmoj.ca/problem/ccc17s2
-// 05/21/2018
+# https://dmoj.ca/problem/ccc17s2
+# 05/21/2018
 
 import math
 N = int(input())
