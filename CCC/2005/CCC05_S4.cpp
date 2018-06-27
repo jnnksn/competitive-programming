@@ -71,6 +71,7 @@ int BFS() {
 int main() {
 	cin >> L;
 	for (int _ = 0; _ < L; ++_) {
+		// Declared variables at each iteration....
 		string name;
 		vector<string> names;
 		vector<int> nodes;
@@ -99,6 +100,9 @@ int main() {
     
 		cout << (N*10) - (BFS()*20) << "\n";
 		for (int i = 1; i <= MAXN; ++i) adj[i].clear();
+		// these won't work...
+		// names.clear();
+		// nodes.clear();
 
 	}
 }
