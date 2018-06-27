@@ -20,3 +20,4 @@ http://www.cplusplus.com/reference/ <br />
 * https://dmoj.ca/problem/ccc16s3
 * https://dmoj.ca/problem/ccc18s5
 * https://dmoj.ca/problem/ccc17s4
+* https://dmoj.ca/problem/ds2
