@@ -22,3 +22,4 @@ http://www.cplusplus.com/reference/ <br />
 * https://dmoj.ca/problem/ccc17s4
 * https://dmoj.ca/problem/ds2
 * ~~https://dmoj.ca/problem/apio15p2~~
+* https://dmoj.ca/problem/ccc10s4
