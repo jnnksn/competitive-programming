@@ -5,7 +5,7 @@
 // We first notice that we must find the shortest path from island A to B, with no negative weights (time > 0)
 // Thus, we are able to use Dijkstra's Algorithm to solve this problem.
 // This would be a direct implementation of Dijkstra, but the problem throws in another variable --> hull damage
-// The only impact this variable has is that we will be using a 2D distance and visited array!
+// The only impact this variable has is that we will be using a 2D distance array.
 // Since, we are no longer keeping track of just the distance from node X to Y, but
 // the distance from node X with hull damage i to node Y with hull damage i+h (where h is how much the hull is damaged
 // going from X to Y).
@@ -14,7 +14,9 @@
 // Going from island 5 to island 6, we take 5 damage to our hull, and it takes 10 minutes.
 // The distance can be represented as: dists[6][i+5] = dists[5][i] + 10, where i is the previous amount of damage at island 5. 
 // So, as long as i+h < K, it is possible.
-
+//
+// Another alteration is that we will not need a visited array, since each [node][dmg] will only be visited once!
+//
 // Finally, loop through dists[E][i], where E is the end node and i is the damage taken from 0 to K-1, keeping track
 // of the smallest distance.
 // -----------------------------------------------------------------------
@@ -29,7 +31,6 @@ const int MAXN = 2000;
 vector<pair<int, pair<int, int>>> adj[MAXN+1];
 int dists[MAXN+1][201];
 priority_queue<pair<int, pair<int, int>>> q;
-bool visited[MAXN+1][201];
 int K, N, M, a, b, t, h, S, E;
 
 void solve() {
@@ -43,8 +44,6 @@ void solve() {
 	q.push({0, {0, S}});
 	while(!q.empty()) {
 		int a = q.top().second.second, z = q.top().second.first; q.pop();
-		if (visited[a][z]) continue;
-		visited[a][z] = true;
 		for (auto u : adj[a]) {
 			int x = u.first, w = u.second.first, d = u.second.second;
 			if (z+d < K && dists[a][z]+w < dists[x][z+d]) {
