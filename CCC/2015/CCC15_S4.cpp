@@ -15,10 +15,19 @@
 // The distance can be represented as: dists[6][i+5] = dists[5][i] + 10, where i is the previous amount of damage at island 5. 
 // So, as long as i+h < K, it is possible.
 //
-// Another alteration is that we will not need a visited array, since each [node][dmg] will only be visited once!
+// Another alteration is that we will not need a visited array, since each [node][dmg] will only be visited once because
+// of our priority queue!
 //
 // Finally, loop through dists[E][i], where E is the end node and i is the damage taken from 0 to K-1, keeping track
 // of the smallest distance.
+//
+// Things to consider:
+// I used pair<int, pair<int, int>> to store triple values
+// thus my priority queue is {-dists, {total hull damage, node}}
+// When given node X to node Y, for your adjacency list, not only do you push Y to adj[X], but
+// X to adj[Y]. I forgot to do this at the start.
+//
+// I think this is the cleanest solution I can make... 
 // -----------------------------------------------------------------------
 
 #include <iostream>
@@ -34,14 +43,11 @@ priority_queue<pair<int, pair<int, int>>> q;
 int K, N, M, a, b, t, h, S, E;
 
 void solve() {
-	for (int i = 0; i <= N; ++i) {
-		for (int j = 0; j <= K; ++j) {
-			dists[i][j] = 1e9;
-		}
-	}
-
+	for (int i = 0; i <= N; ++i) for (int j = 0; j <= K; ++j) dists[i][j] = 1e9;
+	
 	dists[S][0] = 0;
 	q.push({0, {0, S}});
+	
 	while(!q.empty()) {
 		int a = q.top().second.second, z = q.top().second.first; q.pop();
 		for (auto u : adj[a]) {
