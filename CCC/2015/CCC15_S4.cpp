@@ -23,6 +23,7 @@ void solve() {
 
 	dists[S][0] = 0;
 	q.push({0, {0, S}});
+    
 	while(!q.empty()) {
 		int a = q.top().second.second, z = q.top().second.first; q.pop();
 		if (visited[a][z]) continue;
