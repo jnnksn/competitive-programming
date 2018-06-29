@@ -48,7 +48,7 @@ void solve() {
 			int x = u.first, w = u.second.first, d = u.second.second;
 			if (z+d < K && dists[a][z]+w < dists[x][z+d]) {
 				dists[x][z+d] = dists[a][z] + w;
-				q.push({-dists[x][z+d], {-(z+d), x}});
+				q.push({-dists[x][z+d], {z+d, x}});
 			}
 		}
 	}
