@@ -1,6 +1,9 @@
 // http://codeforces.com/contest/520/problem/B
 // 07/02/2018
-
+// -------------------------------------------
+// Set a hard limit for 2*a, which should
+// be maximum M (10000)
+// -------------------------------------------
 #include <iostream>
 #include <queue>
 using namespace std;
