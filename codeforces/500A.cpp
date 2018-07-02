@@ -1,3 +1,6 @@
+// http://codeforces.com/contest/500/problem/A
+// 07/02/2018
+
 #include <iostream>
 #include <queue>
 #include <vector>
