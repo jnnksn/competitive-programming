@@ -26,7 +26,7 @@
 // We then sort the vector, from least to greatest and iterate backwards --> greatest to least.
 // As long as the amount of flooring subtracted by each iteration's room size is greater than 0, we can 
 // increase the number of rooms covered by 1. We do this until the above condition is false. 
-// We are left with a remainder of planks and the number of rooms we can cover from greatest --> least
+// We are left with a remainder and the number of rooms we can cover from greatest --> least
 //
 // Lastly we output our findings.
 // However, one corner case is where there is only a single room.
