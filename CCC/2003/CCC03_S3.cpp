@@ -103,7 +103,7 @@ void search() {
 
 
 int main() {
-    ios::sync_with_stdio(0); cin.tie(0);
+    	ios::sync_with_stdio(0); cin.tie(0);
 	cin >> sqf >> r >> c;
 	for (int i = 1; i <= r; ++i) {
 		cin >> row;
