@@ -26,10 +26,15 @@
 //      |              |
 // 5 -- 1 -- 0 -- 2 -- 3 -- 7   <-- REMEMBER WE REMOVED 5 WHEN WE WERE PRUNNING THE TREE
 //
-// If we started at 5, and visited all leaves, then returned back to 6, it would take 2 * (7-1) = 12 minutes.
+// If we started at 6, and visited all leaves, then returned back to 6, it would take 2 * (7-1) = 12 minutes.
 // That is, visit each edge TWICE.
 // By returning back to 6, we are increasing the time needed by 5 minutes (total 12).
 // Guess what? The diameter of our tree is 5! So, if we didn't go back, our minimum time would be 12 - 5 = 7 minutes!
+// The idea behind this is that while visiting all edges twice, we visit all the edges of the leaves twice, 
+// since we go to the leaf, then 
+// back to our "main path". Thus, when going back, we only go through the main path, since the edges on that path have
+// only been visited once, yet the edges to the leaves have been visited twice already. This main path is also our
+// diameter. So, our diameter is the path where all edges are only visited once during a single traversal.
 // WOAH AMAZING! WOW! Congratulations, you now know what to do! Have fun implementing.
 // ----------------------------------
 
