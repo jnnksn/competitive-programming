@@ -1,7 +1,7 @@
-// https://dmoj.ca/problem/ccc14s2
-// -------------------------------
-// I'm lazy... Nuff said.
-// -------------------------------
+# https://dmoj.ca/problem/ccc14s2
+# -------------------------------
+# I'm lazy... Nuff said.
+# -------------------------------
 
 N = int(input())
 X = input().split()
