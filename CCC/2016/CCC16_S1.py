@@ -11,6 +11,16 @@
 # that of the first, and the number of remaining "*" can make up for the missing characters
 # then it should pass. 
 # -------------------------------
+# -------------------------------
+# I missed an observation.
+# Notice that as long as the two are the same length
+# and the number of occurences of each character in the second string is
+# <= that of the first, then there will always be enough "*", thus no
+# need to check!
+# Therefore, the only reason to output "N" is if the occurences is > or
+# length is different.
+# This is not included in my implementation ^
+# -------------------------------
 
 w1 = input()
 w2 = input()
@@ -31,4 +41,6 @@ if len(w1) == len(w2) and works:
     print("A")
 else:
     print("N")
-        
+    
+
+
