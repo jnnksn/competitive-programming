@@ -108,12 +108,8 @@ int main() {
 	for (int i = 1; i <= r; ++i) {
 		cin >> row;
 		for (int j = 0; j < c; ++j) {
-			if (row[j] == '.') {
-				visited[i][j+1] = false;
-			} else {
-				visited[i][j+1] = true;
-			}
-
+			if (row[j] == '.') visited[i][j+1] = false;
+			else visited[i][j+1] = true;
 		}
 	}
 
