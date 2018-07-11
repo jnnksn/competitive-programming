@@ -20,6 +20,11 @@
 // this is will continue until we reach our last node in ts.
 //
 // We then output the value at DP[N].
+//
+// NOTE:
+// in no way is this the "shortest" solution!
+// There is a way to calculate the number of paths while dfsing. 
+// A hint is that it does have the same concept in the algorithm above.
 // ----------------------------------------------------------------------------------------
 
 #include <iostream>
