@@ -2,7 +2,7 @@
 // 07/11/2018
 // ----------------------------------------------------------------------------------------
 // The Algorithm:
-//This a graph theory AND dynamic programming
+// This a graph theory AND dynamic programming
 // We first notice that this is a directed graph, and acyclic, thus we can use a topological sort.
 // Topological Sort: if there is a path from node a to node b, a will appear before b in ordering.
 // The topologically sorted nodes are stored in an array, ts.
