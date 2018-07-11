@@ -9,7 +9,7 @@
 // 
 // Once we discover our array, ts, we can continue with our dynamic programming.
 // We let DP[x] represent the number of paths to node x.
-// First, we set DP[1] = 1, since we always begin at node 1 and there is only 1 way to node 1.
+// First, we set DP[1] = 1, since there is only 1 way to node 1.
 // We then iterate through array ts, and it is essential that we iterate through nodes in topological order.
 // We use our adjacency list, seeing which nodes are connected with the current node. 
 // nodes that are connected with the current node will have the same number of paths with that node or greater.
@@ -17,7 +17,7 @@
 // we know that node 1 has only 1 path, and its adjacent node, 2, has ATLEAST 1 path as well. (In this case it is only 1 path,
 // but I just wanted to emphasize my point).
 // Thus the number of paths from the current node can be added to the number of paths to its adjacent nodes.
-// this is will continue until we reach our last node in ts, which should be N.
+// this is will continue until we reach our last node in ts.
 //
 // We then output the value at DP[N].
 // ----------------------------------------------------------------------------------------
