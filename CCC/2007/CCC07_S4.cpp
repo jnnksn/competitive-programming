@@ -25,6 +25,7 @@
 // in no way is this the "shortest" solution!
 // There is a way to calculate the number of paths while dfsing. 
 // A hint is that it does have the same concept in the algorithm above.
+// The alternate solution is below this implementation.
 // ----------------------------------------------------------------------------------------
 
 #include <iostream>
@@ -72,3 +73,42 @@ int main() {
 	cout << DP[N] << "\n";
 
 }
+
+/*
+// In the above solution, our DFS already visits nodes in topological order
+// So, by storing them in array ts, this is an extra step!
+// Looking at the below solution, it is the exact same as above, but literally without
+// array ts.
+// I just wanted to include both as the above approach is how a topological sort approach should be handled.
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+const int MAXN = 10000;
+
+vector<int> adj[MAXN+1];
+bool visited[MAXN+1];
+int N, x, y, DP[MAXN+1];
+
+void solve(int s) {
+	visited[s] = true;
+	for (int u : adj[s]) {
+		if (!visited[u]) solve(u);
+		DP[s] += DP[u];
+	}
+}
+
+int main() {
+	ios::sync_with_stdio(0); cin.tie(0);
+	cin >> N;
+	while (true) {
+		cin >> x >> y;
+		if (!x && !y) break;
+		adj[y].push_back(x);
+	}
+	DP[1] = 1;
+	solve(N);
+	cout << DP[N] << "\n";
+}
+*/
