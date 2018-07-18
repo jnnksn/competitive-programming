@@ -24,7 +24,7 @@ void solve(int a, int b) {
 		return;
 	}
 	visited[a][b] = t;
-	if (grid[a][b] == 'N' && a-1 >= 1) solve(a-1, b);
+	if (grid[a][b] == 'N') solve(a-1, b);
 	else if (grid[a][b] == 'S') solve(a+1, b);
 	else if (grid[a][b] == 'E') solve(a, b+1);
 	else if (grid[a][b] == 'W') solve(a, b-1);
