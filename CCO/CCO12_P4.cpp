@@ -35,7 +35,6 @@ void solve(int A, int B) {
 	q.push({A, B});
 	while (!q.empty()) {
 		int a, b; tie(a, b) = q.front(); q.pop();
-		//cout << a << " " << b << "\n";
 		// UP CASE 1
 		if (a - 1 > 0 && dists[a-1][b] > dists[a][b] + 1) {
 			dists[a-1][b] = dists[a][b] + 1;
