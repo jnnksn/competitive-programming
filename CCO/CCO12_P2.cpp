@@ -1,5 +1,20 @@
 // https://dmoj.ca/problem/cco12p2
 // 07/19/2018
+// -------------------------------------------
+// We have to find the second shortest path!
+// We can use dijkstra's twice, once from a to b
+// and second from b to a.
+// This way we find the shortest path from any node
+// to the end (start = b)
+// and the shortest path from any node to
+// the start (start = a)
+// Then we can iterate through each edge
+// and find the shortest distance that uses that edge.
+// To create this shortest distance, we take the sum from the shortest distance of that edge to the start
+// and the shortest distance of that edge to the end. 
+// If that distance is larger than the shortest path, and is the lowest among all other options, then it is
+// our second shortest path!
+// -------------------------------------------
 
 #include <iostream>
 #include <vector>
