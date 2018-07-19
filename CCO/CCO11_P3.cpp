@@ -11,6 +11,7 @@ vector<int> adj[MAXN+1], visited[MAXN+1];
 int cc[MAXN+1][MAXN+1];
 
 int main() {
+	ios::sync_with_stdio(0); cin.tie(0);
 	int n, m; cin >> n >> m;
 	int k; cin >> k;
 	for (int i = 1; i <= k; ++i) {
