@@ -23,6 +23,7 @@ struct edge {
 
 vector<pair<int, int>> f_adj[MAX+1], b_adj[MAX+1];
 vector<edge> edges;
+bool f_vis[MAX+1], b_vis[MAX+1];
 int f_dists[MAX+1], b_dists[MAX+1], sums[MAX+1];
 int N, M, A, B;
 
@@ -32,6 +33,8 @@ void gen_dists_f() {
 	q.push({0, A});
 	while (!q.empty()) {
 		int a = q.top().second; q.pop();
+		if (f_vis[a]) continue;
+		f_vis[a] = true;
 		for (auto u : f_adj[a]) {
 			int w = u.first, b = u.second;
 			if (f_dists[b] > f_dists[a]+w) {
@@ -48,6 +51,8 @@ void gen_dists_b() {
 	q.push({0, B});
 	while (!q.empty()) {
 		int a = q.top().second; q.pop();
+		if (b_vis[a]) continue;
+		b_vis[a] = true;
 		for (auto u : b_adj[a]) {
 			int w = u.first, b = u.second;
 			if (b_dists[b] > b_dists[a]+w) {
@@ -56,6 +61,10 @@ void gen_dists_b() {
 			}
 		}
 	}
+}
+
+bool cmp(pair<int, int> a, long long v) {
+    return a.first < v;
 }
 
 int main() {
@@ -84,12 +93,7 @@ int main() {
 	int Q; cin >> Q;
 	for (int i = 1; i <= Q; ++i) {
 		int D; cin >> D;
-		int s = 0, e = M-1;
-		while (s <= e) {
-			int k = (s+e)/2;
-			if (ans[k].first > D) e = k-1;
-			else s = k+1;
-		}
-		cout << sums[s] << "\n";
+		int ind = lower_bound(ans.begin(), ans.end(), D+1, cmp) - ans.begin();
+		cout << sums[ind] << "\n";
 	}
 }
