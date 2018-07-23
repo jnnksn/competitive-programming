@@ -16,24 +16,11 @@ bool visited[MAXN];
 int adj[MAXN][MAXN], N, parent[MAXN];
 queue<int> q;
 
-bool dfs(int s) {
-	visited[s] = true;
-	if (s == IN(N)) return true;
-	for (int u = 1; u <= IN(N); ++u) {
-		if (visited[u]) continue;
-		if (!adj[s][u]) continue;
-		parent[u] = s;
-		if (dfs(u)) return true;
-
-	}
-	return false;
-}
-
 bool bfs() {
 	fill(visited, visited+MAXN, 0);
-	q.push(IN(1));
-	visited[IN(1)] = 1;
-	parent[IN(1)] = -1;
+	q.push(1);
+	visited[1] = 1;
+	parent[1] = -1;
 	while (!q.empty()) {
 		int a = q.front(); q.pop();
 		for (int u = 1; u <= IN(N); ++u) {
