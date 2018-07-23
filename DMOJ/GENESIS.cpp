@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <algorithm>
-#include <vector>
+#include <queue>
 
 #define IN(a) (2*(a)-1)
 #define OUT(a) (2*(a))
@@ -14,6 +14,7 @@ const int MAXN = 220;
 
 bool visited[MAXN];
 int adj[MAXN][MAXN], N, parent[MAXN];
+queue<int> q;
 
 bool dfs(int s) {
 	visited[s] = true;
@@ -28,9 +29,28 @@ bool dfs(int s) {
 	return false;
 }
 
+bool bfs() {
+	fill(visited, visited+MAXN, 0);
+	q.push(IN(1));
+	visited[IN(1)] = 1;
+	parent[IN(1)] = -1;
+	while (!q.empty()) {
+		int a = q.front(); q.pop();
+		for (int u = 1; u <= IN(N); ++u) {
+			if (visited[u]) continue;
+			if (!adj[a][u]) continue;
+			parent[u] = a;
+			visited[u] = true;
+			q.push(u);
+		}
+	}
+
+	return visited[IN(N)];
+}
+
 int solve() {
 	int max_flow = 0;
-	while (dfs(IN(1))) {
+	while (bfs()) {
 		int mp = 2e9, p;
 		for (int i = IN(N); i != 1; i = parent[i]) {
 			p = parent[i];
@@ -42,7 +62,6 @@ int solve() {
 			adj[i][p] += mp;
 		}
 		max_flow += mp;
-		fill (visited, visited+MAXN, 0);
 	}
 	return max_flow;
 }
