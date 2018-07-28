@@ -37,7 +37,6 @@ void solve() {
 				w = adj[a][i].first;
 			}
 
-			cout << a << " " << i << " " << w << "\n";
 			if (dists[i] > dists[a]+w) {
 				dists[i] = dists[a]+w;
 				q.push({-dists[i], i});
