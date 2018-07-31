@@ -1,6 +1,6 @@
 // https://dmoj.ca/problem/rgss4
 // 07/31/2018
-// O(n^2) approach
+// O(n^2) --> 1000^2 computations < 1 second
 
 #include <iostream>
 #include <algorithm>
