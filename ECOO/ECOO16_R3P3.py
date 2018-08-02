@@ -39,7 +39,7 @@ n = int(input())
 sw = 999999999
 
 for i in range(n):
-    st = input().strip()
+    st = input()
     sw = min(sw, len(st))
     d.append(st)
 
