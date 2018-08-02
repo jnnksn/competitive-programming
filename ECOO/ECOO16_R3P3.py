@@ -12,6 +12,8 @@
 # it up, so I guess I'll just use this one...
 # ---------------------------------------------
 
+# aeternalis solution;
+
 import sys
 input = sys.stdin.readline
 
@@ -28,3 +30,30 @@ for i in range(10):
       if string[k:j] in words:
         array[j] = min(array[j],array[k]+1)
   print(array[-2]-1)
+
+'''
+my solution (TLE)
+  
+d = []
+n = int(input())
+sw = 999999999
+
+for i in range(n):
+    st = input().strip()
+    sw = min(sw, len(st))
+    d.append(st)
+
+
+for _ in range(10):
+    phrase = input()
+    dp = [999999 for i in range(len(phrase)+5)]
+    dp[0] = 0
+
+    for i in range(len(phrase)):
+        for j in range(i+sw, len(phrase)+1):
+            if phrase[i:j] in d:
+                dp[j] = min(dp[i]+1, dp[j])
+        
+  
+    print(dp[len(phrase)]-1)
+  '''
