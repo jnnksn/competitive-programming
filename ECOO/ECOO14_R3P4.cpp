@@ -19,7 +19,7 @@ bool baby_word(string s) {
 }
 
 int main() {
-  ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	int T = 10;
 	while (T--) {
 		fill(dp, dp+2004, 0);
