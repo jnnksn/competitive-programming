@@ -13,13 +13,13 @@ vector<pair<int, pair<int, int>>> res;
 int solve(int r, int t, int f) {
 	if (r == -1 || t <= 0 || f <= 0) return 0;
 	if (dp[r][t][f] != -1) return dp[r][t][f];
-	int ans = -1;
 	int val = res[r].first, ti = res[r].second.first, fo = res[r].second.second;
-
-	int ans2 = solve(r-1, t, f), ans1 = -1;
+	
+	int ans2 = solve(r-1, t, f), ans1 = -1, ans = -1;
 	if (ti <= t && fo <= f) ans1 = val+solve(r-1, t-ti, f-fo);
-
+	
 	ans = max(ans, max(ans1, ans2));
+	
 	return dp[r][t][f] = ans;
 }
 
