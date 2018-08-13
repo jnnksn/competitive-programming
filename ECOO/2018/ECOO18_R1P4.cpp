@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-const int MAX = 48; // Fib get's pretty big by now?
+const int MAX = 48; // Fib gets pretty big by now?
 typedef long long ll;
 
 struct Square {
