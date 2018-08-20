@@ -10,7 +10,10 @@
 // Let each state, where state is the current position of the coins, represent a node in our graph.
 // Thus, our starting node is the first state given to us, and our target node is the target state 
 // (that is, coins arranged in numerical order).
-// Two states (nodes) are adjacent if making (1) move and reach. 
+// Two states (nodes) are adjacent if making (1) move and can reach, while keeping in mind that the move obeys the criteria:
+// -> a coin can only be moved on top of a larger coin
+// -> only a coin on top of the stack can be moved
+// thus, at each state, we must find the coins on the top of each stack.
 // Normally, BFS will have two arrays, one to check whether a node is visited, and another to store distances from the root node.
 // A visited array will not be needed, since as long as we can reach the next state in less moves, we can use it!
 //
