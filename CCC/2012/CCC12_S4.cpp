@@ -36,7 +36,7 @@
 // coin 2 is in position 2
 // coin 3 is in position 1
 //
-// This should be a rather simple BFS afterwards, and if the target node "123" is node visited, then it would be
+// This should be a rather straightforward BFS afterwards, and if the target node "123" is not visited, then it would be
 // impossible!
 // -----------------------------------------------------------------------------------------------------------
 
