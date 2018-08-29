@@ -2,9 +2,6 @@
 // 08/28/2018
 // -------------------------------------------
 // The Algorithm:
-// O(R^2) complexity --> 25000 * 25000 = 6+ seconds...
-// This should TLE, but it does not... SO YAY!
-// 
 // We know that all points which lie on the edge of a circle obey X^2 + Y^2 = R^2, where X and Y are the coordinates
 // R is the radius. So, this means that for any X^2 + Y^2 <= R^2, it is in the circle.
 // We know that any negatives squared is positive, thus checking all quadrants wastes time since the number of pennies in
