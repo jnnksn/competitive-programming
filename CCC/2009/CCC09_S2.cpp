@@ -8,7 +8,9 @@
 // reach row 1. The problem is that there will be repeats (since  both 0 0 and 1 1 --> 0, and both 1 0 and 0 1 --> 1)! Thus,
 // once we find a possible combination, we check if it has been repeated yet, and depending on the feedback we will put it in the
 // vector. 
-// Given the small constraints, my essentially 4 nested for loops works fine.
+// Given the small constraints, my essentially 4 nested for loops (including C++ inbuilt find function) works fine.
+//
+// Edit: Instead of iterating every time to check if a state is repeated, use C++ Set.
 // --------------------------------------------------------------
 
 #include <bits/stdc++.h>
