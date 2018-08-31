@@ -4,7 +4,7 @@
 // Note:
 // Thanks to Wesley-A-Leung... 
 // Our solutions were pretty similar, but I'll admit that his was
-// written in MUCH less lines than mine, so I trimmed my code to match his...
+// written in MUCH less lines than mine, so I give a slightly trimmed version of mine, and below it is my version of his.
 //
 // The Algorithm:
 // We ask ourselves this, "What are the purposes for inserting pies?"
@@ -31,10 +31,73 @@
 //     if last taken: Insert divider
 //     else: Take the largest insertable pie
 //     We obey until all insertable pies are exhausted.
-// 
+// --> About the first point... I'm not too sure? At first, I thought that the optimal end to start in was the end where
+//     its adjacent pie was not taken, so we could right away start taking pies. However, after seeing wleung's solution,
+//     it does not seem that this is true. The code displayed is the one accounting for the front, however, it is
+//     unneeded as you can AC without accounting for it.
+//
 // Remember case where M = 0, since if you start your arrays at index 0, it may mess up the values.
 // You could account for when M = 0 in many ways, one way could be to start arrays at 1.
 // --------------------------------------------
+
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+const int MAXN = 3004;
+
+vector<int> curr, insert;
+int N, M;
+ll dp[MAXN][104][104][2];
+
+ll solve(int n, int s, int e, bool l, int front) {
+	if (dp[n][s][e][l] != -1) return dp[n][s][e][l];
+	ll ans;
+	if (n == N) {
+		if (s <= e) {
+			if (l) ans = solve(n, s+1, e, 0, front);
+			else if (front == 0) ans = solve(n, s, e-1, 1, front-1) + insert[e];
+			else ans = solve(n, s, e-1, 1, front) + insert[e];
+		} else {
+			ans = 0;
+		}
+		return dp[n][s][e][l] = ans;
+	}
+
+	if (l) {
+		ans = solve(n+1, s, e, 0, front);
+		if (s <= e) ans = max(ans, solve(n, s+1, e, 0, front));
+	} else {
+
+		if (n > 0) ans = solve(n+1, s, e, 1, front) + curr[n];
+		else ans = solve(n+1, s, e, 1, 1) + curr[n];
+		ans = max(ans, solve(n+1, s, e, 0, front));
+		if (e >= s) ans = max(ans, solve(n, s, e-1, 1, front)+insert[e]);
+	}
+	return dp[n][s][e][l] = ans;
+}
+
+int main() {
+	ios::sync_with_stdio(0); cin.tie(0);
+	cin >> N;
+	for (int i = 0; i < N; ++i) {
+		int tmp; cin >> tmp;
+		curr.push_back(tmp);
+	}
+	cin >> M;
+	for (int i = 0; i < M; ++i) {
+		int tmp; cin >> tmp;
+		insert.push_back(tmp);
+	}
+	memset(dp, -1, sizeof(dp));
+	sort(insert.begin(), insert.end());
+	if (M > 0) cout << solve(0, 0, M-1, 0, 0) << "\n";
+	else cout << solve(0, 1, 0, 0, 0) << "\n";
+}
+
+/*
+Inspired by Wesley's pro solution
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -79,3 +142,4 @@ int main() {
 	if (M > 0) cout << solve(0, 0, M-1, 0) << "\n";
 	else cout << solve(0, 1, 0, 0) << "\n";
 }
+*/
