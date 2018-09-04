@@ -14,14 +14,10 @@ struct Ret {
 vector<pair<int, int>> adj[MAXN];
 int val[MAXN];
 int N, C, K, ans=0;
-bool vis[MAXN];
 
 Ret solve(int node) {
 	int cherries = val[node], weight = 0;
 	for (auto u : adj[node]) {
-		if (vis[u.first]) continue;
-		vis[u.first] = 1;
-
 		Ret v = solve(u.first);
 		cherries += v.cherries;
 		weight += v.weight + u.second;
@@ -37,9 +33,7 @@ int main() {
 	for (int i = 1; i < N; ++i) {
 		int a, b, w; cin >> a >> b >> w;
 		adj[a].push_back({b, w});
-		adj[b].push_back({a, w});
 	}
-	vis[1] = 1;
 	solve(1);
 	cout << ans << "\n";
 }
