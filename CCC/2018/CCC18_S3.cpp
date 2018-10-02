@@ -16,6 +16,15 @@
 // a spot on the grid if the 
 // current move + 1 is less than
 // the spot it is moving to.
+//
+// The Algorithm:
+// This is traversing the graph using either DFS or BFS (I used BFS)
+// In this case, adjacent nodes are the ones where you move up, down, left, right.
+// We can think of this as, at the node (x,y), it is adjacent to nodes (x+1, y), (x-1, y), (x, y+1), and (x, y-1)
+// While traversing, we use a blocked array, indicating nodes blocked by cameras or walls. So we only add
+// the next node to our queue if it is not blocked.
+//
+// We lastly loop through our 2d dists array and output the value, while making sure the node at that part is not blocked.
 // -------------------------------
 
 #include <iostream>
