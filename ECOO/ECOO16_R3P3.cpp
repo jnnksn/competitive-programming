@@ -1,6 +1,12 @@
 // https://dmoj.ca/problem/ecoo16r3p3
 // 08/01/2018
-//include <bits/stdc++.h>
+// ---------------------------------------------
+// Okay... I had to look at other's solution to see what was up.
+// Apparently map data structure takes up more memory than set?
+// I used the exact same code, but used set instead of map and AC'd (before was MLE)
+// ---------------------------------------------
+
+include <bits/stdc++.h>
 using namespace std;
 
 set<string> word;
@@ -15,7 +21,6 @@ int main() {
 	cin >> N;
 	for (int i = 0; i < N; i++) {
 		string w; cin >> w;
-		//word[w] = 1;
 		word.insert(w);
 	}
 	int T = 10;
