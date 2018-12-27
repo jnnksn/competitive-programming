@@ -11,11 +11,14 @@ number between 0 to N-1
 This is us compressing the coordinates into a range of 0-(N-1).
 
 Next, we use a difference array by performing the following for each rectangle:
-1. Add the tint factor to the left edge of the rectangle.
-2. Subtract the tint factor from the right edge of the rectangle.
+1. Add and subtract the corners in order to update the difference array
 
-Then, we can access the difference array in order to get the final tint factors. However, we remember
-that the coordinates were compressed, and to get the actual area, we can calculate it by adding the
+Then, we can access the difference array in order to get the final tint factors. 
+the following can be used to get the final tint:
+da[i][j] += da[i-1][j] + da[i][j-1] - da[i-1][j-1];
+i represents one of the corner x-coordinates, and j one of the corner y-coordinates
+
+However, we remember that the coordinates were compressed, and to get the actual area, we can calculate it by adding the
 area of the square pocket with that specific tint factor: deltaY*deltaX.
 */
 
@@ -54,31 +57,29 @@ int main() {
 	sort(sortX.begin(), sortX.end());
 	sort(sortY.begin(), sortY.end());
 
-    for (int i = 0; i < sortX.size(); i++) {
-        dictX[sortX[i]] = i;
-    }
-     for (int i = 0; i < sortY.size(); i++) {
-        dictY[sortY[i]] = i;
-    }
+  for (int i = 0; i < sortX.size(); i++) {
+      dictX[sortX[i]] = i+1;
+  }
+   for (int i = 0; i < sortY.size(); i++) {
+      dictY[sortY[i]] = i+1;
+  }
+
 	for (int i = 0; i < N; i++) {
-
-		for (int j = dictY[rects[i].y1]; j < dictY[rects[i].y2]; j++) {
-
-			da[j][dictX[rects[i].x1]] += rects[i].t;
-			da[j][dictX[rects[i].x2]] -= rects[i].t;
-		}
+		da[dictX[rects[i].x1]][dictY[rects[i].y1]] += rects[i].t;
+		da[dictX[rects[i].x1]][dictY[rects[i].y2]] -= rects[i].t;
+		da[dictX[rects[i].x2]][dictY[rects[i].y1]] -= rects[i].t;
+		da[dictX[rects[i].x2]][dictY[rects[i].y2]] += rects[i].t;
 	}
-
 	ll ans = 0;
-	for (ll i = 0; i < sortY.size()-1; i++) {
-		for (ll j = 0; j < sortX.size()-1; j++) {
-			da[i][j+1] += da[i][j];
+	for (int i = 1; i < sortX.size(); i++) {
+		for (int j = 1; j < sortY.size(); j++) {
+			da[i][j] += da[i-1][j] + da[i][j-1] - da[i-1][j-1];
 			if (da[i][j] >= T) {
-				ans += (sortY[i+1] - sortY[i]) * (sortX[j+1] - sortX[j]);
+				ans += (sortX[i]-sortX[i-1]) * (sortY[j]-sortY[j-1]);
 			}
 		}
 	}
-
 	cout << ans << "\n";
 
 }
+
