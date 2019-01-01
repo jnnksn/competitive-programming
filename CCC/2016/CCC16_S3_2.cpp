@@ -79,7 +79,6 @@ int main() {
 	}
 	int valid = 0;
 	for (int i = 0; i < N; i++) {
-		//cout << prune[i] << "\n";
 		if (!prune[i]) {
 			valid++;
 		}
