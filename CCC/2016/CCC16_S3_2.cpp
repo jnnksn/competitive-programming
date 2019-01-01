@@ -45,7 +45,7 @@ int main() {
 		if (adj[i].size() == 1 && !pho[i]) {
 			prune[i] = 1;
 			int path = adj[i][0];
-			sz[adj[i][0]]--;
+			sz[path]--;
 			while (!pho[path] && sz[path] == 1) {
 				prune[path] = 1;
 				for (int nxt : adj[path]) {
