@@ -53,8 +53,7 @@ int main() {
 				for (int nxt : adj[path]) {
 					if (!prune[nxt]) {
 						path = nxt;
-						sz[path]--;
-						break;
+						sz[path]--; break;
 					}
 				}
 			}
