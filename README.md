@@ -2,6 +2,9 @@
 **I suck at coding..........FOR NOW.** :stuck_out_tongue_closed_eyes: <br />
 **_Undated Solutions Were Created Before 3/18/2018_** :date:
 
+**TODO** /
+https://atcoder.jp/contests/dp/tasks for DP Practice
+
 *C++ Competitive Programming Template (updated 06/27/2018):* <br />
 ```c++
 #include <bits/stdc++.h>
