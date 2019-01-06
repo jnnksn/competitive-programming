@@ -15,11 +15,12 @@ int main() {
 }
 // READ
 /*
+Slow and easy wins the race.
 -------------------------------------------------------------------
 1. Make sure you understand and don't miss anything!
 2. Constraints
 3. Time and memory limit
-4. Problem Type
+4. Problem Type ~ Don't get tricked! (Animal Farm, New Years P3)
   i. Graph Theory
   ii. Greedy
   iii. Dynamic Programming
