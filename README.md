@@ -18,14 +18,14 @@ int main() {
 Slow and easy wins the race.
 -------------------------------------------------------------------
 1. Make sure you understand and don't miss anything!
-2. Constraints
-3. Time and memory limit
+2. Constraints && Time and memory limit
 4. Problem Type ~ Don't get tricked! (Animal Farm, New Years P3)
   i. Graph Theory
   ii. Greedy
   iii. Dynamic Programming
   iv. Data Structures
   v. Rest (Math, implementation, string, etc)
+5. Have I seen this problem before? What tricks can I use from previous problems? (PHO, CONVEX, KING GRUFF)
 -------------------------------------------------------------------
 */
 
