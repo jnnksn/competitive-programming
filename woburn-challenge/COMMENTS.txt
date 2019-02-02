@@ -1,2 +1,9 @@
-**2019-3-Junior**:
-Test
+_2019-3-Junior_:
+Did not take this contest seriously... I probably comitted less than 50 minutes on this contest and was sick.
+Problems seemed good for junior, although it was surprising that I didn't solve J4 while in
+contest. Fortunately, I solved it 2 minutes after the contest finished! 
+LEARNED:
+- Don't be too overconfident, this was a bad performance by me
+- Implemented J4 incorrectly... Spend more time on a more efficient solution. 
+  Don't go straight to coding.
+- Take contests seriously. This is good practice.
