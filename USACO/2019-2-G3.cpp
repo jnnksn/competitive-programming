@@ -33,12 +33,12 @@ int main() {
 		adj[a].push_back({b, t});
 		adj[b].push_back({a, t});
 	}
-	q.push({0, -1});
+	q.push({0, 1});
 	fill(dist, dist+MAXN, 1e18);
 	fill(par, par+MAXN, 1e18);
 	dist[1] = 0;
 	while (!q.empty()) {
-		ll n = -q.top().second;
+		ll n = q.top().second;
 		q.pop();
 		if (vis[n]) continue;
 		vis[n] = 1;
@@ -49,7 +49,7 @@ int main() {
 				else par[b] = n;
 				dist[b] = dist[n]+w;
 
-				q.push({-dist[b], -b});
+				q.push({dist[b], -b});
 			}
 		}
 	}
